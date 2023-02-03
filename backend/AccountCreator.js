@@ -1,0 +1,6 @@
+ class AccountCreator {
+    constructor(Connection){
+
+    };
+    
+}
