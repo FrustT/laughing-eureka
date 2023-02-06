@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { redirect } from 'react-router-dom';
 import { User } from '../models/user.model.js';
 
 const userRouter = Router();
@@ -26,7 +27,11 @@ userRouter.route('/add').post((req, res) => {
 	});
 	newUser
 		.save()
-		.then(() => res.json('User added!'),console.log("A user Created"))
+		.then(
+			() => res.json('User added!'),
+			console.log('A user Created'),
+			res.redirect('login')
+		)
 		.catch((err) => res.status(400).json('Error: ' + err));
 });
 

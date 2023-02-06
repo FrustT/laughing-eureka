@@ -119,3 +119,14 @@ footer h4 {
 }
 
 /******Footer_End****/
+
+/*****Error_page****/
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/*****Error_end*****/

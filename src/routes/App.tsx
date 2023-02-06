@@ -1,5 +1,5 @@
-import './index.css';
-import Content from './ContentRouter';
+import '../index.css';
+import Content from './Content';
 
 function App() {
 	return (

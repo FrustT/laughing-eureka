@@ -1,5 +1,4 @@
-import './index.css';
-import Signupform from './boxcontents/Signupform';
+import '../index.css';
 import Box from './Box';
 
 function Content() {
