@@ -1,8 +1,9 @@
-import './index.css';
+import '../index.css';
 
-function BoxContent() {
+export default function Signupform() {
 	return (
-		<form action="/signup" method="post">
+		<form action="users/add" method="post">
+			<h2>Sign Up</h2>
 			<input
 				type="text"
 				name="username"
@@ -37,4 +38,3 @@ function BoxContent() {
 		</form>
 	);
 }
-export default BoxContent;

@@ -26,7 +26,7 @@ userRouter.route('/add').post((req, res) => {
 	});
 	newUser
 		.save()
-		.then(() => res.json('User added!'))
+		.then(() => res.json('User added!'),console.log("A user Created"))
 		.catch((err) => res.status(400).json('Error: ' + err));
 });
 

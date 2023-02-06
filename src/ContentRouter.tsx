@@ -1,5 +1,6 @@
 import './index.css';
-import BoxContent from './BoxContent';
+import Signupform from './boxcontents/Signupform';
+import Box from './Box';
 
 function Content() {
 	return (
@@ -8,12 +9,4 @@ function Content() {
 		</div>
 	);
 }
-function Box() {
-	return (
-		<div className="box">
-			<BoxContent />
-		</div>
-	);
-}
-
 export default Content;

@@ -9,7 +9,8 @@ mongoose.set('strictQuery', true); //disables  deprecation warning
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = 5173;
+//const port = process.env.PORT || 5000;
 
 app.use(cors(), express.json());
 
