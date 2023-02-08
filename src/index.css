@@ -50,7 +50,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 
@@ -71,7 +71,6 @@ footer {
   border: 2px solid var(--footer);
   border-radius: 10px;
   outline: none;
-  cursor: pointer;
   padding: 8px 16px;
   transition: 0.3s;
 }
@@ -81,7 +80,7 @@ footer {
 
 }
 
-form {
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,12 +95,12 @@ form {
   gap: 3px;
 }
 
-form button {
+.form button {
   align-content: end;
 }
 
 a,
-form button,
+.form button,
 .nav button {
   text-decoration: none;
   color: var(--soft-text);
@@ -110,12 +109,30 @@ form button,
   margin: 0;
 }
 
-form button,
+.form button,
 .nav button {
   border: solid 2px var(--footer);
   border-radius: 3em;
   background-color: var(--buttoncolor);
 
+}
+
+span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  color: var(--soft-text);
+}
+
+label {
+  color: var(--soft-text);
+
+}
+
+.form input {
+  justify-self: flex-end;
 }
 
 .nav button:hover {

@@ -3,6 +3,7 @@ import App from './routes/App';
 import ErrorPage from './Components/error-page';
 import Loginform from './boxcontents/Loginform';
 import Signupform from './boxcontents/Signupform';
+import StatePlayground from './boxcontents/StatePlayground';
 
 export const router = createBrowserRouter([
 	{
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
 						element: <Loginform />,
 					},
 				],
+			},
+			{
+				path: 'state',
+				element: <StatePlayground />,
 			},
 		],
 	},
