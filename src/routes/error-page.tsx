@@ -1,5 +1,4 @@
 import { useRouteError } from 'react-router-dom';
-import '../index.css';
 
 export default function ErrorPage() {
 	const error: any = useRouteError(); //since its already unknown type in doc ':any' seemed right enough

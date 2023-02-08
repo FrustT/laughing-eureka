@@ -1,9 +1,6 @@
-import '../index.css';
-
 export default function Loginform() {
 	return (
-		<form action="/login" method="get">
-			<h2>Log in</h2>
+		<form>
 			<input
 				type="text"
 				name="username"
@@ -17,9 +14,7 @@ export default function Loginform() {
 				id=""
 			/>
 			<div>
-				<button type="submit" value="Log in">
-					Log in
-				</button>
+				<button type="submit">Log in</button>
 			</div>
 		</form>
 	);

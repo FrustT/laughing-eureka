@@ -1,4 +1,3 @@
-import '../index.css';
 import Box from './Box';
 
 function Content() {

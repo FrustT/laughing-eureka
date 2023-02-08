@@ -1,9 +1,7 @@
-import '../index.css';
-
+import { useState } from 'react';
 export default function Signupform() {
 	return (
 		<form action="users/add" method="post">
-			<h2>Sign Up</h2>
 			<input
 				type="text"
 				name="username"
@@ -34,7 +32,9 @@ export default function Signupform() {
 				placeholder="Password Again"
 				id=""
 			/>
-			<input type="submit" value="Submit" />
+			<div>
+				<button type="submit">Sign up</button>
+			</div>
 		</form>
 	);
 }
