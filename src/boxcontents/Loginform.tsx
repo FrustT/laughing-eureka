@@ -13,9 +13,8 @@ export default function Loginform() {
 				placeholder="Password"
 				id=""
 			/>
-			<div>
-				<button type="submit">Log in</button>
-			</div>
+
+			<button type="submit">Log in</button>
 		</form>
 	);
 }

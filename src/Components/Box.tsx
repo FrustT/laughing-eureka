@@ -7,10 +7,14 @@ export default function Box() {
 	return (
 		<div className="box">
 			<div className="nav">
-				<button><Link to={'login'}>Log in</Link></button>
-				<button><Link to={'signup'}>Sign up</Link></button>
-				
+				<button>
+					<Link to={'login'}>Log in</Link>
+				</button>
+				<button>
+					<Link to={'signup'}>Sign up</Link>
+				</button>
 			</div>
+			<div className="border"></div>
 			<Outlet />
 		</div>
 	);

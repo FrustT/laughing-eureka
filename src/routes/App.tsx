@@ -1,10 +1,11 @@
-import Content from './Content';
+import Content from '../Components/Content';
 
 function App() {
 	return (
 		<div className="wrapper">
 			<header>
 				<h1>Welcome To My Website</h1>
+				<div className="account-wrapper">HELLO</div>
 			</header>
 			<Content />
 			<footer>

@@ -2,23 +2,25 @@
 
 :root {
   /**Variables*/
-  --header: #4343bd;
-  --contentcolor-light: #8787d0;
-  --contentcolor: #252558;
-  --footer: #9278fa;
-  --soft-text: #7d6141;
+  --header: #335C67;
+  --contentcolor-light: #B6CB9E;
+  --contentcolor: #92B4A7;
+  --footer: #412234;
+  --soft-text: #fff3b0;
+  --buttoncolor: #8C7051;
 }
 
 * {
   font-family: 'Montserrat', sans-serif;
 }
 
-/*** Position Debugging Block
+/*Position Debugging Block* 
 header,
 footer,
 div {
-    border: solid 2px red;
-}***/
+  border: solid 2px red;
+}
+/**/
 
 /***Wrapper + header|footer ****/
 .wrapper {
@@ -32,6 +34,7 @@ header,
 footer {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 /***END_OF__Wrapper_+_header|footer_****/
@@ -42,13 +45,14 @@ footer {
   padding: 15px;
   flex: 1;
   background: linear-gradient(45deg,
-      var(--contentcolor) 0%,
-      var(--contentcolor-light) 100%);
+      var(--header) 0%,
+      var(--footer) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
+
 
 .box {
   border: 2px solid var(--header);
@@ -59,12 +63,12 @@ footer {
   flex-direction: column;
   align-items: center;
   transition: 0.3s;
-  gap: 20px;
+  gap: 10px;
 }
 
 .box input {
   background-color: aliceblue;
-  border: 2px solid var(--header);
+  border: 2px solid var(--footer);
   border-radius: 10px;
   outline: none;
   cursor: pointer;
@@ -73,11 +77,8 @@ footer {
 }
 
 .box button:hover {
-  background-color: #ddd;
-}
+  background-color: var(--footer);
 
-.box button.active {
-  background-color: #ccc;
 }
 
 form {
@@ -87,24 +88,52 @@ form {
   gap: 5px;
 }
 
-form button,
-.nav button {
-  color: #ddd;
-  border: solid 2px #1c1c5e;
-  border-radius: 3em;
-  background-color: #2d2d5c;
-
-}
-
 .nav {
   display: flex;
-  gap: 15px;
+  border: 3px solid var(--footer);
+  border-radius: 3em;
+  background-color: var(--buttoncolor);
+  gap: 3px;
 }
 
-.nav a {
+form button {
+  align-content: end;
+}
+
+a,
+form button,
+.nav button {
   text-decoration: none;
+  color: var(--soft-text);
+  font-weight: 700;
+  padding: 4px 10px;
+  margin: 0;
+}
+
+form button,
+.nav button {
+  border: solid 2px var(--footer);
+  border-radius: 3em;
+  background-color: var(--buttoncolor);
 
 }
+
+.nav button:hover {
+  flex: 1;
+}
+
+.nav button {
+  border: none;
+  margin: 0;
+}
+
+.border {
+  background-color: var(--contentcolor);
+  width: 100%;
+  height: 2px;
+}
+
+
 
 /**END_OF_Content**/
 
@@ -112,10 +141,17 @@ form button,
 header {
   background-color: var(--header);
   border-bottom: 2px solid var(--footer);
+  padding: 15px;
 }
 
 header>h1 {
   font-weight: bolder;
+  flex: 1;
+  align-self: center;
+}
+
+.account-wrapper {
+  justify-self: flex-end;
 }
 
 /********End_Header****/
@@ -131,6 +167,7 @@ footer {
 footer h4 {
   margin: 0;
   color: var(--soft-text);
+  align-self: center;
 }
 
 /******Footer_End****/

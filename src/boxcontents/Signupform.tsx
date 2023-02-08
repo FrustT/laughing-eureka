@@ -32,9 +32,8 @@ export default function Signupform() {
 				placeholder="Password Again"
 				id=""
 			/>
-			<div>
-				<button type="submit">Sign up</button>
-			</div>
+
+			<button type="submit">Sign up</button>
 		</form>
 	);
 }
