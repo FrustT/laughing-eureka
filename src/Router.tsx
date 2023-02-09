@@ -7,7 +7,7 @@ import StatePlayground from './boxcontents/StatePlayground';
 
 export const router = createBrowserRouter([
 	{
-		path: '/',
+		path: '/laughing-eureka/',
 		element: <App />,
 		errorElement: <ErrorPage />,
 		children: [

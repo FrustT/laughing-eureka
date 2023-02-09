@@ -3,7 +3,7 @@
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
-	"homepage": "https://frustt.github.io/laughing-eureka",
+	"homepage": "https://frustt.github.io/",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",

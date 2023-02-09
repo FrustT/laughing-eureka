@@ -8,9 +8,11 @@ export default function ErrorPage() {
 			<p>
 				<h1> Sorry, </h1>an unexpected error has occured.
 			</p>
+			<h2>{error.status}</h2>
 			<p>
 				<i>{error.statusText || error.message}</i>
 			</p>
+			<p>{error.data.message}</p>
 		</div>
 	);
 }

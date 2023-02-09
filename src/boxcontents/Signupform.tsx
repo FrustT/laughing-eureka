@@ -80,6 +80,7 @@ export default function Signupform() {
 				<input
 					type="password"
 					name="password"
+					placeholder="Password"
 					value={passwords.password1}
 					onChange={(e) => changePassword1(e.target.value)}
 				/>
@@ -89,6 +90,7 @@ export default function Signupform() {
 				<input
 					type="password"
 					value={passwords.password2}
+					placeholder="Password Again"
 					onChange={(e) => {
 						changePassword2(e.target.value);
 						if (passwords.password1 == e.target.value)

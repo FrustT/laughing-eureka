@@ -26,6 +26,7 @@ export default function StatePlayground() {
 			<p>I am {user.age} years old.</p>
 			<p>I have {user.appleCount} apples.</p>
 			<div
+				className="form"
 				style={{
 					display: 'flex',
 					flexDirection: 'column',
@@ -33,24 +34,24 @@ export default function StatePlayground() {
 					alignItems: 'center',
 				}}
 			>
-				<label>
-					<span>Name </span>
+				<span>
+					<label>Name</label>
 					<input
 						type="text"
 						value={user.name}
 						onChange={(e) => changeName(e.target.value)}
 					/>
-				</label>
-				<label>
-					<span>Age </span>
+				</span>
+				<span>
+					<label>Age </label>
 					<input
 						type="text"
 						value={user.age}
 						onChange={(e) => changeAge(e.target.value)}
 					/>
-				</label>
-				<label>
-					<span>Apple Count </span>
+				</span>
+				<span>
+					<label>Apple Count </label>
 					<input
 						type="text"
 						value={user.appleCount}
@@ -58,7 +59,7 @@ export default function StatePlayground() {
 							changeAppleCount(e.target.value)
 						}
 					/>
-				</label>
+				</span>
 			</div>
 		</div>
 	);
