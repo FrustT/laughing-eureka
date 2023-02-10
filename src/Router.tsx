@@ -4,6 +4,7 @@ import ErrorPage from './Components/error-page';
 import Loginform from './boxcontents/Loginform';
 import Signupform from './boxcontents/Signupform';
 import StatePlayground from './boxcontents/StatePlayground';
+import Users from './boxcontents/Users';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'users',
-        element: <Loginform />,
+        element: <Users />,
         children: [
           {
             path: 'add',

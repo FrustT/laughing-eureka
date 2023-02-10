@@ -9,10 +9,19 @@ mongoose.set('strictQuery', true); //disables  deprecation warning
 dotenv.config();
 
 const app = express();
-const port = 5173;
+const port = 3000;
 //const port = process.env.PORT || 5000;
 
-app.use(cors(), express.json());
+app.use(cors({
+	origin:'http://localhost:5173',
+	credentials:true,	
+}));
+app.use(express.json());
+app.use((req, res, next) => {
+	res.setHeader('Access-Control-Allow-Headers', '*');
+	logger.debug(req.ip + ': ' + req.method + ' ' + req.originalUrl, req.body);
+	next();
+});
 
 const uri = process.env.ATLAS_URI;
 
@@ -26,7 +35,8 @@ connection.once('open', () => {
 	console.log(`MongoDB connection established successfully`);
 });
 
-app.use('/users', userRouter);
+app.use('/api/v1/users', userRouter);
+app.use('*',(req,res)=>res.status(404).json({error: "Unsupported Route"}));
 
 app.listen(port, () => {
 	console.log(

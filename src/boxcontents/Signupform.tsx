@@ -6,10 +6,10 @@ export default function Signupform() {
     password2: '',
   });
   const [user, setUser] = useState({
-    userName: '',
-    fullName: '',
-    password: '',
-    email: '',
+    userName: 'FrustT',
+    fullName: 'Burak Erinç',
+    password: 'buraburakburak',
+    email: 'oawefkopawfoai@aflmfaewmaewfi',
     birthDate: '',
   });
   function changeUserName(_username: string) {
@@ -37,24 +37,21 @@ export default function Signupform() {
   function changePassword2(_password2: string) {
     setPasswords({ ...passwords, password2: _password2 });
   }
-  function printUser() {
-    alert(user);
+  function submit() {
+    fetch('http://localhost:3000/api/v1/users/add', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+      },
+      credentials: 'include',
+      body: JSON.stringify(user),
+    }).then((res) => {
+      console.log(res);
+      console.log(res.data);
+    });
   }
   return (
     <div className="form">
-      <p>
-        {user.userName}
-        {' '}
-        {user.fullName}
-        {' '}
-        {user.email}
-        {' '}
-        {user.password}
-        {' '}
-        {passwordsDoMatch()}
-        {' '}
-        {user.birthDate}
-      </p>
       <span>
         <label>User Name: </label>
         <input
@@ -103,7 +100,9 @@ export default function Signupform() {
           placeholder="Password Again"
           onChange={(e) => {
             changePassword2(e.target.value);
-            if (passwords.password1 === e.target.value) { changePassword(e.target.value); }
+            if (passwords.password1 === e.target.value) {
+              changePassword(e.target.value);
+            }
           }}
         />
       </span>
@@ -115,7 +114,7 @@ export default function Signupform() {
           onChange={(e) => changebirthDate(e.target.value)}
         />
       </span>
-      <button type="submit" onClick={() => printUser()}>
+      <button type="submit" onClick={() => submit()}>
         Sign up
       </button>
     </div>
