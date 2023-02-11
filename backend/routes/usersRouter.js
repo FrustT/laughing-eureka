@@ -42,7 +42,6 @@ userRouter.route('/add').post((req, res) => {
 			.then(
 				() => res.json('User added!'),
 				console.log('A user Created'),
-				res.redirect('login')
 			)
 			.catch((err) => res.status(400).json('Error: ' + err));
 	});

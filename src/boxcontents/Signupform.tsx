@@ -6,14 +6,14 @@ export default function Signupform() {
     password2: '',
   });
   const [user, setUser] = useState({
-    userName: 'FrustT',
+    username: 'FrustT',
     fullName: 'Burak Erinç',
     password: 'buraburakburak',
     email: 'oawefkopawfoai@aflmfaewmaewfi',
     birthDate: '',
   });
-  function changeUserName(_username: string) {
-    setUser({ ...user, userName: _username });
+  function changeUsername(_username: string) {
+    setUser({ ...user, username: _username });
   }
   function changeFullName(_fullName: string) {
     setUser({ ...user, fullName: _fullName });
@@ -27,9 +27,6 @@ export default function Signupform() {
   function changePassword(_password: string) {
     setUser({ ...user, password: _password });
   }
-  function passwordsDoMatch() {
-    return passwords.password1 === passwords.password2;
-  }
   function changePassword1(_password1: string) {
     setPasswords({ ...passwords, password1: _password1 });
   }
@@ -41,14 +38,23 @@ export default function Signupform() {
     fetch('http://localhost:3000/api/v1/users/add', {
       method: 'POST',
       headers: {
-        'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        'Content-type': 'application/json; charset=UTF-8',
       },
       credentials: 'include',
       body: JSON.stringify(user),
-    }).then((res) => {
-      console.log(res);
-      console.log(res.data);
-    });
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res;
+        }
+        throw Error(`Request rejected with status ${res.status}`);
+      })
+      .catch(console.error);
+  }
+
+  function debugSubmit() {
+    const body = JSON.stringify(user);
+    console.log(body);
   }
   return (
     <div className="form">
@@ -58,8 +64,8 @@ export default function Signupform() {
           type="text"
           name="username"
           placeholder="User Name"
-          value={user.userName}
-          onChange={(e) => changeUserName(e.target.value)}
+          value={user.username}
+          onChange={(e) => changeUsername(e.target.value)}
         />
       </span>
       <span>

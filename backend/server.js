@@ -14,12 +14,12 @@ const port = 3000;
 
 app.use(cors({
 	origin:'http://localhost:5173',
-	credentials:true,	
+	credentials:true,
+	allowedHeaders: ['Content-Type', 'Authorization']	
 }));
 app.use(express.json());
 app.use((req, res, next) => {
-	res.setHeader('Access-Control-Allow-Headers', '*');
-	logger.debug(req.ip + ': ' + req.method + ' ' + req.originalUrl, req.body);
+	console.log(req.ip + ': ' + req.method + ' ' + req.originalUrl, req.body);
 	next();
 });
 
@@ -36,7 +36,7 @@ connection.once('open', () => {
 });
 
 app.use('/api/v1/users', userRouter);
-app.use('*',(req,res)=>res.status(404).json({error: "Unsupported Route"}));
+//app.use('*',(req,res)=>res.status(404).json({error: "Unsupported Route"}));
 
 app.listen(port, () => {
 	console.log(

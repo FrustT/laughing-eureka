@@ -21,7 +21,7 @@ export default function Users() {
           </p>
         ))
       )}
-      <div clasName="border" />
+      <div className="border" />
     </div>
   );
 }
